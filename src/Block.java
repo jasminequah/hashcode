@@ -11,4 +11,11 @@ public class Block {
     this.ridesThatStartHere = ridesThatStartHere;
     this.ridesThatEndHere = ridesThatEndHere;
   }
+
+  public void removeFinishedRide(Ride ride) {
+    ridesThatEndHere.remove(ride);
+    ridesThatStartHere.remove(ride);
+  }
+
+
 }
