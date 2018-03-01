@@ -29,6 +29,17 @@ public class City {
     return new Ride(0,0,1000000,10000000,0,0,0);
   }
 
+  public boolean hasRides(){
+    for (Block[] blocks : city) {
+      for (Block block : blocks) {
+        if (!block.ridesThatStartHere.isEmpty()) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
 
 
 

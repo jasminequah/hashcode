@@ -12,7 +12,7 @@ public class Vehicle {
   int currentTime;
   int maxTime;
 
-  public Vehicle(int x, int y, int vehicleID, City city, int maxTime) {
+  public Vehicle(int vehicleID, City city, int maxTime) {
     this.maxTime = maxTime;
     this.x = 0;
     this.y = 0;
