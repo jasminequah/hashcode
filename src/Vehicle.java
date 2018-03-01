@@ -63,7 +63,7 @@ public class Vehicle {
       ret.append(id);
       ret.append(" ");
     }
-    return (ridesDone.size() + " " + ret);
+    return (vehicleID + " " + ridesDone.size() + " " + ret);
   }
 
   public Ride optinum() {

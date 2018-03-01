@@ -21,23 +21,23 @@ public class Part3 {
     assertNotEquals(TestSuiteHelper.readFile("files/null.res"),
         TestSuiteHelper.runMain("files/b.dat", tmpFolder));
   }
-//
-//  @Test
-//  public void runc() {
-//    assertNotEquals(TestSuiteHelper.readFile("files/null.res"),
-//        TestSuiteHelper.runMain("files/c.dat", tmpFolder));
-//  }
-//
-//  @Test
-//  public void rund() {
-//    assertNotEquals(TestSuiteHelper.readFile("files/null.res"),
-//        TestSuiteHelper.runMain("files/d.dat", tmpFolder));
-//  }
-//
-//  @Test
-//  public void rune() {
-//    assertNotEquals(TestSuiteHelper.readFile("files/null.res"),
-//        TestSuiteHelper.runMain("files/e.dat", tmpFolder));
-//  }
+
+  @Test
+  public void runc() {
+    assertNotEquals(TestSuiteHelper.readFile("files/null.res"),
+        TestSuiteHelper.runMain("files/c.dat", tmpFolder));
+  }
+
+  @Test
+  public void rund() {
+    assertNotEquals(TestSuiteHelper.readFile("files/null.res"),
+        TestSuiteHelper.runMain("files/d.dat", tmpFolder));
+  }
+
+  @Test
+  public void rune() {
+    assertNotEquals(TestSuiteHelper.readFile("files/null.res"),
+        TestSuiteHelper.runMain("files/e.dat", tmpFolder));
+  }
 
 }
