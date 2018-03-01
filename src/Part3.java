@@ -12,31 +12,31 @@ public class Part3 {
 
   @Test
   public void runa() {
-    assertNotEquals(TestSuiteHelper.readFile("testcases/outputs/turtle_cluster_1.res"),
+    assertNotEquals(TestSuiteHelper.readFile("files/null.res"),
         TestSuiteHelper.runMain("files/a.dat", tmpFolder));
   }
 
   @Test
   public void runb() {
-    assertNotEquals(TestSuiteHelper.readFile("testcases/outputs/turtle_cluster_2.res"),
+    assertNotEquals(TestSuiteHelper.readFile("files/null.res"),
         TestSuiteHelper.runMain("files/b.dat", tmpFolder));
   }
 
   @Test
   public void runc() {
-    assertNotEquals(TestSuiteHelper.readFile("e.res"),
+    assertNotEquals(TestSuiteHelper.readFile("files/null.res"),
         TestSuiteHelper.runMain("files/c.dat", tmpFolder));
   }
 
   @Test
   public void rund() {
-    assertNotEquals(TestSuiteHelper.readFile("d.res"),
+    assertNotEquals(TestSuiteHelper.readFile("files/null.res"),
         TestSuiteHelper.runMain("files/d.dat", tmpFolder));
   }
 
   @Test
   public void rune() {
-    assertNotEquals(TestSuiteHelper.readFile("d.res"),
+    assertNotEquals(TestSuiteHelper.readFile("files/null.res"),
         TestSuiteHelper.runMain("files/e.dat", tmpFolder));
   }
 
