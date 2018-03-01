@@ -27,7 +27,7 @@ public class Vehicle {
     return x;
   }
 
-  public setPosition(int x, int y) {
+  public void setPosition(int x, int y) {
     this.x = x;
     this.y = y;
   }
@@ -84,7 +84,19 @@ public class Vehicle {
   }
 
   public void takeOptinum() {
+    Ride opt = optinum();
+    currentTime += opt.getRideTime() + opt.timeToStartPointFrom(x, y);
+    city.getBlockAtCood(x, y).ridesThatStartHere.remove(opt);
+    setPosition(opt.getFinishX(), opt.getFinishY());
+    ridesDone.add(opt);
+    city.getBlockAtCood(x, y).ridesThatStartHere.remove(opt);
 
+  }
+
+  public Ride getNextRide() {
+    Ride nextRide = ridesDone.get(0);
+    ridesDone.remove(nextRide);
+    return nextRide;
   }
 
 
