@@ -10,7 +10,7 @@ public class Main {
     City newCity = new City(Integer.parseInt(args[0]), Integer.parseInt(args[1]));
 
     int numberOfVehicles = Integer.parseInt(args[2]);
-    int maxTime = Integer.parseInt(args[5])
+    int maxTime = Integer.parseInt(args[5]);
 
     List<Vehicle> listOfVehicles = new ArrayList<>();
 
@@ -23,11 +23,8 @@ public class Main {
         v.optinum();
         v.takeOptinum();
       }
-
       v.toString();
-
     }
-
   }
 
 }

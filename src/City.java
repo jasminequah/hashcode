@@ -1,13 +1,18 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class City {
 
   private Block[][] city;
   private final int rows;
   private final int columns;
+  private List<Ride> ridesToComplete;
 
   public City(int rows, int columns) {
     city = new Block[rows][columns];
     this.rows = rows;
     this.columns = columns;
+    this.ridesToComplete = new ArrayList<>();
   }
 
   public Block getBlockAtCood(int x, int y) {
@@ -16,6 +21,17 @@ public class City {
 
   public Block[][] getCity() {
     return city;
+  }
+
+  public List<Ride> getRidesToComplete() {
+    for (Block[] blocks : city) {
+      for (Block block : blocks) {
+        for(Ride r : block.ridesThatStartHere) {
+          ridesToComplete.add(r);
+        }
+      }
+    }
+    return ridesToComplete;
   }
 
   public Ride getRandomRide() {
