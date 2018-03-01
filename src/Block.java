@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Block {
@@ -6,10 +7,10 @@ public class Block {
   List<Ride> ridesThatStartHere;
   List<Ride> ridesThatEndHere;
 
-  public Block(List<Vehicle> vehiclesHere, List<Ride> ridesThatStartHere, List<Ride> ridesThatEndHere) {
-    this.vehiclesHere = vehiclesHere;
-    this.ridesThatStartHere = ridesThatStartHere;
-    this.ridesThatEndHere = ridesThatEndHere;
+  public Block() {
+    this.vehiclesHere       = new ArrayList<>();
+    this.ridesThatStartHere = new ArrayList<>();
+    this.ridesThatEndHere   = new ArrayList<>();
   }
 
   public void removeFinishedRide(Ride ride) {
@@ -25,5 +26,8 @@ public class Block {
     ridesThatEndHere.add(ride);
   }
 
+  public void addVehicle(Vehicle vehicle) {
+    vehiclesHere.add(vehicle);
+  }
 
 }

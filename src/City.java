@@ -10,13 +10,22 @@ public class City {
 
   public City(int rows, int columns) {
     city = new Block[rows][columns];
+    for (Block[] blocks : city) {
+      for (Block block : blocks) {
+        block = new Block();
+      }
+    }
     this.rows = rows;
     this.columns = columns;
     this.ridesToComplete = new ArrayList<>();
   }
 
+  public void addVehicleAt(int x, int y, Vehicle vehicleToAdd) {
+    city[rows - x - 1][y].addVehicle(vehicleToAdd);
+  }
+
   public Block getBlockAtCood(int x, int y) {
-    return city[rows - y][x];
+    return city[rows - y - 1][x];
   }
 
   public Block[][] getCity() {
