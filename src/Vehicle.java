@@ -86,10 +86,11 @@ public class Vehicle {
   public void takeOptinum() {
     Ride opt = optinum();
     currentTime += opt.getRideTime() + opt.timeToStartPointFrom(x, y);
+    setPosition(opt.getStartX(), opt.getStartY());
     city.getBlockAtCood(x, y).ridesThatStartHere.remove(opt);
     setPosition(opt.getFinishX(), opt.getFinishY());
     ridesDone.add(opt);
-    city.getBlockAtCood(x, y).ridesThatStartHere.remove(opt);
+    city.getBlockAtCood(x, y).ridesThatEndHere.remove(opt);
 
   }
 

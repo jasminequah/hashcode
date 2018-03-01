@@ -36,7 +36,7 @@ public class Main {
 
     for (Vehicle v : listOfVehicles) {
       while (v.currentTime < maxTime && v.getCity().hasRides()) {
-        v.optinum();
+//        v.optinum();
         v.takeOptinum();
       }
       System.out.println(v.toString());
