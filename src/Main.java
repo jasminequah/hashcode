@@ -28,7 +28,9 @@ public class Main {
       }
 
     for (int i = 0; i < numberOfVehicles; i++) {
-      listOfVehicles.add(i, new Vehicle(i,newCity, maxTime));
+      Vehicle v = new Vehicle(i,newCity, maxTime)
+      listOfVehicles.add(i, v);
+      newCity.addVehicleAt(0, 0, v);
     }
 
     for (Vehicle v : listOfVehicles) {
