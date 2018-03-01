@@ -17,5 +17,13 @@ public class Block {
     ridesThatStartHere.remove(ride);
   }
 
+  public void addStartRide(Ride ride) {
+    ridesThatStartHere.add(ride);
+  }
+
+  public void addFinishRide(Ride ride) {
+    ridesThatEndHere.add(ride);
+  }
+
 
 }

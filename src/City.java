@@ -56,6 +56,12 @@ public class City {
     return false;
   }
 
+  public void addRide(int a, int b, int x, int y, int start, int finish, int id) {
+    Ride addThisRide = new Ride(a, b, x, y, start, finish, id);
+    getBlockAtCood(a, b).addStartRide(addThisRide);
+    getBlockAtCood(x, y).addFinishRide(addThisRide);
+  }
+
 
 
 
