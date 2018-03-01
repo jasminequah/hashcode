@@ -10,18 +10,23 @@ public class City {
 
   public City(int rows, int columns) {
     city = new Block[rows][columns];
-    for (Block[] blocks : city) {
-      for (Block block : blocks) {
-        block = new Block();
+    for (int i = 0; i < rows; i++) {
+      for (int j = 0; j < columns; j++) {
+        city[i][j] = new Block();
       }
     }
+//    for (Block[] blocks : city) {
+//      for (Block block : blocks) {
+//        block = new Block();
+//      }
+//    }
     this.rows = rows;
     this.columns = columns;
     this.ridesToComplete = new ArrayList<>();
   }
 
   public void addVehicleAt(int x, int y, Vehicle vehicleToAdd) {
-    city[rows - x - 1][y].addVehicle(vehicleToAdd);
+    city[rows - y - 1][x].addVehicle(vehicleToAdd);
   }
 
   public Block getBlockAtCood(int x, int y) {
@@ -47,11 +52,11 @@ public class City {
     for (Block[] blocks : city) {
       for (Block block : blocks) {
         if (!block.ridesThatStartHere.isEmpty()) {
-          return block.ridesThatEndHere.get(0);
+          return block.ridesThatStartHere.get(0);
         }
       }
     }
-    return new Ride(0,0,1000000,10000000,0,0,0);
+    return null;
   }
 
   public boolean hasRides(){

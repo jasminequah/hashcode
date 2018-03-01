@@ -8,8 +8,9 @@ public class Main {
 
   public static void main(String[] args) throws FileNotFoundException{
     instructions = new Scanner(new File(args[0]));
-
-    City newCity          = new City(instructions.nextInt(), instructions.nextInt());
+    int rows = instructions.nextInt();
+    int cols = instructions.nextInt();
+    City newCity          = new City(cols, rows);
     int numberOfVehicles  = instructions.nextInt();
     int numRides          = instructions.nextInt();
     int bonus             = instructions.nextInt();
@@ -28,7 +29,7 @@ public class Main {
       }
 
     for (int i = 0; i < numberOfVehicles; i++) {
-      Vehicle v = new Vehicle(i,newCity, maxTime)
+      Vehicle v = new Vehicle(i,newCity, maxTime);
       listOfVehicles.add(i, v);
       newCity.addVehicleAt(0, 0, v);
     }
@@ -38,7 +39,7 @@ public class Main {
         v.optinum();
         v.takeOptinum();
       }
-      v.toString();
+      System.out.println(v.toString());
     }
   }
 
