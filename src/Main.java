@@ -1,18 +1,31 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.*;
 
 public class Main {
 
-  public static void main(String[] args) {
+  private static Scanner instructions;
 
-    City newCity = new City(Integer.parseInt(args[0]), Integer.parseInt(args[1]));
+  public static void main(String[] args) throws FileNotFoundException{
+    instructions = new Scanner(new File(args[0]));
 
-    int numberOfVehicles = Integer.parseInt(args[2]);
-    int maxTime = Integer.parseInt(args[5]);
+    City newCity          = new City(instructions.nextInt(), instructions.nextInt());
+    int numberOfVehicles  = instructions.nextInt();
+    int numRides          = instructions.nextInt();
+    int bonus             = instructions.nextInt();
+    int maxTime           = instructions.nextInt();
+
+//    City newCity = new City(Integer.parseInt(args[0]), Integer.parseInt(args[1]));
+
+//    int numberOfVehicles = Integer.parseInt(args[2]);
+//    int maxTime = Integer.parseInt(args[5]);
 
     List<Vehicle> listOfVehicles = new ArrayList<>();
+      for (int i = 0; i < numRides; i++) {
+        newCity.addRide(instructions.nextInt(), instructions.nextInt(),
+          instructions.nextInt(), instructions.nextInt(),
+          instructions.nextInt(), instructions.nextInt(), i);
+      }
 
     for (int i = 0; i < numberOfVehicles; i++) {
       listOfVehicles.add(i, new Vehicle(i,newCity, maxTime));

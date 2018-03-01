@@ -99,7 +99,26 @@ public class Vehicle {
     return nextRide;
   }
 
+  if (!checkRidePossible) {
 
+  }
+
+  public boolean checkRidePossible(Ride ride) {
+    int timeToWait          = ride.getStartTime() - currentTime;
+    int timeToTravelToStart = ride.timeToStartPointFrom(x, y);
+    return (!(timeToWait - timeToTravelToStart < 0));
+  }
+
+
+  public Ride getShortestRide() {
+    Ride shortestRide = city.getRandomRide();
+    for (Ride ride : getRidesToComplete()) {
+      if (ride.getRideTime() < shortestRide.getRideTime()) {
+        shortestRide = ride;
+      }
+    }
+    return shortestRide;
+  }
 
 
 
