@@ -26,7 +26,7 @@ public class City {
         }
       }
     }
-    return new Ride(0,0,0,0,0,0,0);
+    return new Ride(0,0,1000000,10000000,0,0,0);
   }
 
 

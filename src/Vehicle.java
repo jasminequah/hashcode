@@ -27,6 +27,11 @@ public class Vehicle {
     return x;
   }
 
+  public setPosition(int x, int y) {
+    this.x = x;
+    this.y = y;
+  }
+
   public int getY() {
     return y;
   }
@@ -63,7 +68,7 @@ public class Vehicle {
 
   public Ride optinum() {
     Block[][] blocks = city.getCity();
-    Ride optinum =
+    Ride optinum = city.getRandomRide();
 
     for (Block[] block : blocks) {
       for (Block block1 : block) {
@@ -76,6 +81,10 @@ public class Vehicle {
       }
     }
     return optinum;
+  }
+
+  public void takeOptinum() {
+
   }
 
 
