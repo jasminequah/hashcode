@@ -30,7 +30,7 @@ public class Simulation {
   public void runSimulation() {
     for (Vehicle v : vehicles) {
       time = 0;
-      while (time < finalTime) { //and still rides left
+      while (time < finalTime && !v.ridesDone.isEmpty()) { //and still rides left
         Ride nextRide = v.getNextRide();
         boolean getBonus = false;
 
@@ -40,7 +40,7 @@ public class Simulation {
 
         //Waits
         if (time <= nextRide.getStartTime()) {
-          time = getFinishTime();
+          time = nextRide.getFinishTime();
           getBonus = true;
         }
 
