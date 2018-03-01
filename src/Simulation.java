@@ -40,17 +40,17 @@ public class Simulation {
 
         //Waits
         if (time <= nextRide.getStartTime()) {
-          time = getStartTime();
+          time = getFinishTime();
           getBonus = true;
         }
 
         //Drive to finish
-        time += getTime(v.getX(), v.getY(), nextRide.getEndX(), nextRide.getEndY());
-        v.setPosition(nextRide.getEndX(), nextRide.getEndY());
+        time += getTime(v.getX(), v.getY(), nextRide.getFinishX(), nextRide.getFinishY());
+        v.setPosition(nextRide.getFinishX(), nextRide.getFinishY());
 
         //If arrives before ride's final time, adds to score
-        if (time <= nextRide.getEndTime) {
-          score += getTime(getRideTime());
+        if (time <= nextRide.getFinishTime()) {
+          score += nextRide.getRideTime();
           if (getBonus) {
             score += bonus;
           }
